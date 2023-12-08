@@ -2,11 +2,13 @@
 main {
     display: block;
     align-items: center;
+    text-align: center;
 }
 
 #sec-1 {
     display:block;
-    background-color: darkorange;
+    background-color: #ff6e02;
+
 }
 
 
@@ -17,13 +19,21 @@ body {
 
 header h1 {
     display: inline-block;
-    border: 4px solid blue;
+    border: 6px solid black;
     border-radius: 15px;
-    background-color: darkorange;
     padding: 15px;
     text-align: center;
     text-transform: uppercase;
-    color: aqua
+    color: aqua;
+    -webkit-text-stroke: 4px black;
+    color: #ff6e02;
+    font-size: 7em;
+    background-image: url(img/eagle.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: drop-shadow(5px 5px 15px black);
+    margin: 5vw
 }
 header {
     display: inline-block;
@@ -35,19 +45,11 @@ header {
     background-color: lightcyan;
     color: white;
 }
-header ul li {
-    display: block;
-    list-style: none;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: blue;
-    width: 50%;
-}
 #head-div {
     display: grid;
-    width: 80%;
+    width: 100%;
 
-    background-image: url('img/antonio-can.png');
+    background-image: url('img/antonio-can2.png');
     background-repeat: space;
     background-origin: content-box;
     background-size: 10vw;
@@ -57,38 +59,53 @@ header ul li {
     margin-left: auto;
     margin-right: auto;
 
-    
 }
 #head-sub {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-        "slogan can"
-    ;
+    display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     justify-items: center;
     padding: 30px;
 }
 #head-img {
-    grid-area: can;
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
+    transform: rotate(-15deg);
+    filter: drop-shadow(5px 5px 15px black);
 }
 #head-img img{
     height: 30vh;
 }
+#head-img-2 {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    transform: rotate(15deg);
+    filter: drop-shadow(5px 5px 15px black);
+}
+#head-img-2 img{
+    height: 30vh;
+}
+@media screen and (max-width: 768px) {
+    #head-sub {
+        flex-wrap: wrap;
+    }
+    #head-img-2 {
+        display: none;
+    }
+}
 #slogans {
     font-size: 1.4em;
-    grid-area: slogan;
-    display: inline-block;
-    text-align: right;
-    background-color: blue;
-    border: 4px  darkorange;
-    border-radius: 25px;;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 30px;
+    text-align: center;
+    text-decoration: underline;
+    flex-grow: 1;
+
+    background-color: #22437a;
+    border: 4px  white solid;
+    border-radius: 25px;
+    padding: 15px;
+    filter: drop-shadow(5px 5px 15px black);
 }
 
 
@@ -97,43 +114,36 @@ header ul li {
 div {
     display: inline-block;
 }
+.img-template {
+    height: 25vh;
+    border: gold 4px solid;
+    border-radius: 25px;
+}
 #one {
     grid-area: one;
-    width: 100vw;
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
     margin-left: auto;
     margin-right: auto;
-
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-areas: 
-        "samu onetwo"
-    ;
-    align-items: center;
-    justify-content: center;
+    padding: 0px;
 }
 #one-1 img{
     border: 4px gray solid;
     border-radius: 25px;
-    height: 25vh;
+    width: 30vw;
 }
 #one-1 {
-    grid-area: samu;
-    display: inline-block;
     margin: 25px;
     text-align: center;
-    margin-left: auto;
-    margin-right: 1vw;
-    nav-right: auto;
 }
 
 #one-2 {
-    display: block;
     text-align: center;
-    grid-area: onetwo;
-    width: 55vw;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.3em;
+    font-size: 1em;
     background-color: beige;
     border: 4px black solid;
     border-radius: 25px;
@@ -141,6 +151,14 @@ div {
 }
 #one-2 h2 {
     text-align: center;
+}
+@media screen and (max-width: 768px) {
+    #one {
+        flex-wrap: wrap;
+    }
+    #one-1 img {
+        width: 70vw;
+    }
 }
 
 #two {
@@ -154,8 +172,9 @@ div {
 }
 #two-1 {
     height: 40vh;
-    margin: 25px;
-    background-image: url(img/lineup.jpg);
+    margin: 35px;
+    /* background-image: url(img/lineup.jpg); */
+    
     background-size: 1000vw;
     background-blend-mode:darken;
 }
@@ -163,7 +182,10 @@ div {
     height: 40vh;
     width: 80vw;
     object-fit: none;
-    
+    padding: 0px;
+    filter: drop-shadow(5px 5px 25px black);
+    border: 4px none solid;
+    border-radius: 25px;
 }
 #two-2 {
     width: 80vw;
@@ -175,7 +197,8 @@ div {
     border: 4px black solid;
     border-radius: 25px;
     padding: 10px;
-    margin-top: 25px;
+    margin-top: 50px;
+    margin-bottom: 15px;
 }
 
 
@@ -183,81 +206,42 @@ div {
 #three { 
     grid-area: three;
     text-align: center;
-
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 30px;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-        "threeone threetwo"
-        "threefour threethree"
-        "threefive threefive"
-    ;
-    row-gap: 30px;
-
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    padding-top: 30px;
     margin: 15px;
-    margin-top: 5vh;
-
     background-color: black;
     border: 4px;
     border-radius: 30px;
+    width: 90vw;
 }
-#three-1 {
-    grid-area: threeone;
-}
-#three-1 {
-    width: 40vw;
+
+.flex-three {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row; 
     text-align: left;
-    margin-left: auto;
-    margin-right: 25px;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px;
+}
+.flex-three p {
     font-size: 1.6em;
     color: white;
-    background-color: darkblue;
+    background-color: #22437a;
     padding: 15px;
-    border: 4px white solid;
+    border: 4px gold solid;
     border-radius: 25px;
-}
-
-
-#three-2 {
-    grid-area: threetwo;
-    margin-left: 25px;
-    margin-right: auto;
-}
-#three-2 img {
-    height: 25vh;
-    border: gold 4px solid;
-    border-radius: 25px;
-}
-#three-4 img {
-    height: 25vh;
-    border: gold 4px solid;
-    border-radius: 25px;
-}
-#three-3 {
-    grid-area: threethree;
-    text-align: right;
-    margin-left: 25px;
-    margin-right: auto;
-
     width: 40vw;
-    text-align: left;
-    font-size: 1.6em;
-    color: white;
-    background-color: darkblue;
-    padding: 15px;
-    border: 4px white solid;
-    border-radius: 25px;
 }
-#three-4 {
-    grid-area: threefour;
-    margin-left: auto;
-    margin-right: 25px;
+.flex-three img{
+    height: 40vh;
+    border: gold 4px solid;
+    border-radius: 200px;
+    text-align: center;
 }
+
 #three-5 {
     grid-area: threefive;
     display: inline-block;
@@ -289,21 +273,127 @@ div {
     background-color: black;
     color: white;
 }
+#three-6 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-area: threesix;
+    padding: 25px;
+    flex-wrap: wrap;
+}
+/* @media screen and (max-width: 768px){
+    #three:nth-child(2) {
+        flex-direction: row-reverse;
+
+    }
+} */
+/* @media screen and (max-width: 768px) {
+    #three-6:nth-child(2) {
+        order: 3;
+    }
+    #three-6:nth-child(1) {
+        order: 1;
+    }
+    #three-6:nth-child(3) {
+        order: 2;
+    }
+} */
    
     
-/*    
+    
 #four {
     grid-area: four;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    background-image: url('img/antonio-can2.png');
+    background-repeat: space;
+    background-origin: content-box;
+    background-size: 10vw;
 }
+.four {
+    display: inline-block;
+    text-align: center;
+    border: 4px #22437a solid;
+    border-radius: 25px;
+    margin: 25px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+    background-color: lightgray;
+    color: black;
+
+    filter: drop-shadow(5px 5px 15px black);
+}
+.four img {
+    width: 25vw;
+    border: 4px #22437a;
+    border-radius: 25px;
+}
+.four-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+#progress {
+    border:#22437a 4px solid;
+    display: flex;
+    justify-content: center;
+    background-color: #22437a;
+    color: white;
+    text-transform: uppercase;
+}
+
 #five {
     grid-area: five;
+    padding: 30px;
+    background-color: #ff6e02;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
+.flex-five {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.flex-five img {
+    width: 40vw;
+    margin: 20px;
+    border: 4px solid black;
+    border-radius: 25px;
+}
+#five h1, #five h2, #five h3 {
+    text-align: center;
+    background-color: beige;
+    border: 4px black solid;
+    border-radius: 25px;
+    padding: 20px;
+    width: 40vw;
+}
+#five-2 img{
+    width: 20vw;
+}
+#league {
+    text-align: center;
+}
+#league img {
+    width: 20vw;
+}
+
+
+
 #six {
     grid-area: six;
 }
 #seven {
     grid-area: seven;
 }
+/*
 #eight {
     grid-area: eight;
 }
